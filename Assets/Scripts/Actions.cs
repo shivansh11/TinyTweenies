@@ -36,6 +36,8 @@ public class Actions : MonoBehaviour {
         {
             anim1.SetTrigger("isSlide");
             anim2.SetTrigger("isSlide");
+            rb1.AddForce(TT1.transform.up * (-450f));
+            rb2.AddForce(TT2.transform.up * (-450f));
         }
 
         if (tc.Tap)
