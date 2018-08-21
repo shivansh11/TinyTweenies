@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="500px" height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<path display="none" fill="#A5A5A5" d="M215.423,413h73.608c0,0-20.889-221.51-36.804-221.51
+	C236.312,191.49,215.423,413,215.423,413z"/>
+<path display="none" fill="#848484" d="M215.423,413h73.608c0,0-20.89-29.499-36.805-29.499
+	C236.311,383.501,215.423,413,215.423,413z"/>
+<circle display="none" fill="none" stroke="#845440" stroke-width="5" stroke-miterlimit="10" cx="252.228" cy="204.601" r="14.957"/>
+<circle display="none" fill="#C6B328" cx="252.228" cy="204.602" r="13.597"/>
+<g id="Blade">
+	<polygon fill="#D8D209" points="236.264,228.353 252.382,233.309 229.099,336.205 197.71,326.553 	"/>
+	<polygon fill="none" stroke="#845440" stroke-width="3" stroke-miterlimit="10" points="236.509,227.556 252.628,232.512 
+		229.345,335.404 197.957,325.754 	"/>
+	
+		<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="213.138" y1="331.297" x2="244.057" y2="230.749"/>
+	
+		<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="239.524" y1="285.257" x2="217.181" y2="278.386"/>
+	
+		<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="235.355" y1="310.177" x2="206.627" y2="301.344"/>
+</g>
+<g id="Blade_1_">
+	<polygon fill="#D8D209" points="227.479,188.082 222.523,204.2 119.629,180.917 129.281,149.53 	"/>
+	<polygon fill="none" stroke="#845440" stroke-width="3" stroke-miterlimit="10" points="228.277,188.327 223.321,204.445 
+		120.428,181.16 130.079,149.775 	"/>
+	
+		<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="125.902" y1="165.538" x2="226.448" y2="196.456"/>
+	
+		<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="170.761" y1="190.743" x2="177.632" y2="168.398"/>
+	
+		<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="145.841" y1="186.573" x2="154.674" y2="157.846"/>
+</g>
+<g id="Blade_3_">
+	<polygon fill="#D8D209" points="268.045,180.478 251.926,175.522 275.21,72.627 306.597,82.279 	"/>
+	<polygon fill="none" stroke="#845440" stroke-width="3" stroke-miterlimit="10" points="267.799,181.276 251.681,176.32 
+		274.964,73.426 306.352,83.076 	"/>
+	<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="291.169" y1="77.536" x2="260.252" y2="178.083"/>
+	
+		<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="264.784" y1="123.576" x2="287.127" y2="130.447"/>
+	<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="268.953" y1="98.654" x2="297.68" y2="107.488"/>
+</g>
+<g id="Blade_2_">
+	<polygon fill="#D8D209" points="276.971,220.286 281.928,204.168 384.821,227.451 375.169,258.838 	"/>
+	<polygon fill="none" stroke="#845440" stroke-width="3" stroke-miterlimit="10" points="276.174,220.041 281.129,203.922 
+		384.023,227.205 374.371,258.592 	"/>
+	
+		<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="380.769" y1="243.293" x2="280.222" y2="212.376"/>
+	<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="333.547" y1="218.09" x2="326.677" y2="240.433"/>
+	
+		<line fill="none" stroke="#845440" stroke-width="2" stroke-miterlimit="10" x1="358.468" y1="222.258" x2="349.633" y2="250.986"/>
+</g>
+</svg>
