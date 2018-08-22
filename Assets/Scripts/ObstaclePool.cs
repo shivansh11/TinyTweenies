@@ -8,7 +8,8 @@ public class ObstaclePool : MonoBehaviour {
     public GameObject SpikePrefab;
     public GameObject BombPrefab;
     public GameObject UFOPrefab;
-    public float spawnRate = 2f;
+    public float spawnRate = 4f;
+    public float fastForward = 0f;
 
     private GameObject Windmill;
     private GameObject Spike;
@@ -21,13 +22,16 @@ public class ObstaclePool : MonoBehaviour {
     private int obstacleIndex2;
 
     void Start () {
-       // Windmill = (GameObject)Instantiate(WindmillPrefab, obstaclePoolPosition, WindmillPrefab.transform.rotation);
-       // Spike = (GameObject)Instantiate(SpikePrefab, obstaclePoolPosition, SpikePrefab.transform.rotation);
-       // Bomb = (GameObject)Instantiate(BombPrefab, obstaclePoolPosition, Quaternion.identity);
-       // UFO = (GameObject)Instantiate(UFOPrefab, obstaclePoolPosition, Quaternion.identity);
+
     }
 	
 	void Update () {
+        fastForward += Time.deltaTime;
+        if (spawnRate > 1f && fastForward >= 6f) {
+            fastForward = 0;
+            SetSpawnRate();
+        }
+
         timeSinceLastSpawned += Time.deltaTime;
 
         if (timeSinceLastSpawned >= spawnRate) {
@@ -42,18 +46,20 @@ public class ObstaclePool : MonoBehaviour {
 	}
 
     public void SpawnObstacles(int obstacleIndex1, int obstacleIndex2) {
+        //Spawn upper world obstacles
         if (obstacleIndex1 == 1)
             Bomb = (GameObject)Instantiate(BombPrefab, new Vector2(spawnXPosition, 0.55f), Quaternion.identity);
-            //Bomb.transform.position = new Vector2(spawnXPosition, 0.55f);
         else if(obstacleIndex1 == 2)
             UFO = (GameObject)Instantiate(UFOPrefab, new Vector2(spawnXPosition, 2.65f), Quaternion.identity);
-            //UFO.transform.position = new Vector2(spawnXPosition, 2.65f);
 
+        //Spawn lower world obstacles
         if (obstacleIndex2 == -1)
             Spike = (GameObject)Instantiate(SpikePrefab, new Vector2(spawnXPosition, -0.5f), SpikePrefab.transform.rotation);
-            //Spike.transform.position = new Vector2(spawnXPosition, -0.5f);
         else if (obstacleIndex2 == -2)
             Windmill = (GameObject)Instantiate(WindmillPrefab, new Vector2(spawnXPosition, -1.42f), WindmillPrefab.transform.rotation);
-            //Windmill.transform.position = new Vector2(spawnXPosition, -1.42f);
+    }
+
+    public void SetSpawnRate() {
+        spawnRate /= 1.05f;
     }
 }

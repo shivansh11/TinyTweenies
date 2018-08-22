@@ -441,6 +441,7 @@ MonoBehaviour:
   BombPrefab: {fileID: 1298171001920600, guid: 49fdfc575577e424599337460901c674, type: 2}
   UFOPrefab: {fileID: 1338063960624712, guid: 5651c5bcc6f63df48b253b995084c4c1, type: 2}
   spawnRate: 4
+  fastForward: 0
 --- !u!4 &127576784
 Transform:
   m_ObjectHideFlags: 0
