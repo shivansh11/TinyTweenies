@@ -24,8 +24,15 @@ public class ImpactManager : MonoBehaviour {
 	}
 
     private void OnCollisionEnter2D(Collision2D collision){
+        Debug.Log("YO");
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        anim1.SetTrigger("isDead");
-        anim2.SetTrigger("isDead");
+        if (collision.gameObject.name == "TT1" || collision.gameObject.name == "TT2")
+        {
+            anim1.SetTrigger("isDead");
+            anim2.SetTrigger("isDead");
+        }
+        else
+            Destroy(gameObject);
+            
     }
 }
