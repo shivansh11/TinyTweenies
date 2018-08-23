@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Actions : MonoBehaviour {
     public TouchController tc;
-    public GameObject TT1, TT2, BulletPrefab;
+    public GameObject TT1, TT2, BulletPrefab, SwordCollider;
     public Rigidbody2D rb1, rb2;
     private GameObject Bullet;
     public Animator anim1, anim2;
@@ -12,6 +12,7 @@ public class Actions : MonoBehaviour {
     public float timeDelay = 1.25f;
     public float jumpTime = 0f;
     public float slideTime = 0f;
+    public float combatTime = 0f;
 
     void Start () {
         anim1 = TT1.GetComponent<Animator>();
@@ -42,11 +43,13 @@ public class Actions : MonoBehaviour {
             rb2.AddForce(TT2.transform.up * (-450f));
         }
 
-        if (tc.Tap)
+        if (tc.Tap && combatTime <= 0)
         {
+            combatTime = timeDelay;
             anim1.SetTrigger("isCombat");
             anim2.SetTrigger("isCombat");
             StartCoroutine(SpawnBullet());
+            StartCoroutine(ActivateSword());
         }
 
         if (jumpTime > 0)
@@ -54,11 +57,21 @@ public class Actions : MonoBehaviour {
 
         if(slideTime > 0)
             slideTime -= Time.deltaTime;
+
+        if (combatTime > 0)
+            combatTime -= Time.deltaTime;
     }
 
     IEnumerator SpawnBullet() {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.25f);
         Bullet = (GameObject)Instantiate(BulletPrefab, new Vector2(-4f, 1.18f), Quaternion.identity);
 
+    }
+
+    IEnumerator ActivateSword() {
+        yield return new WaitForSeconds(0.2f);
+        SwordCollider.SetActive(true);
+        yield return new WaitForSeconds(0.4f);
+        SwordCollider.SetActive(false);
     }
 }

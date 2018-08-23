@@ -6,6 +6,7 @@ public class ObstaclePool : MonoBehaviour {
 
     public GameObject WindmillPrefab;
     public GameObject AlienPrefab;
+    public GameObject MonkeyPrefab;
     public GameObject BirdPrefab;
     public GameObject SpikePrefab;
     public GameObject BombPrefab;
@@ -15,6 +16,7 @@ public class ObstaclePool : MonoBehaviour {
     public float fastForward = 0f;
 
     private GameObject Windmill;
+    private GameObject Monkey;
     private GameObject Alien;
     private GameObject Bird;
     private GameObject Spike;
@@ -28,6 +30,7 @@ public class ObstaclePool : MonoBehaviour {
     private int obstacleIndex2 = 0;
     private int chooseUFO;
     private int chooseWindmillOrBird;
+    private int chooseAnimal;
 
     void Start () {
 
@@ -97,7 +100,23 @@ public class ObstaclePool : MonoBehaviour {
 
         if (obstacleIndex1 == 0 || obstacleIndex2 == -obstacleIndex1 || obstacleIndex2 == 0)
             SpawnObstacles(obstacleIndex1, obstacleIndex2);
-        else
-            Alien = (GameObject)Instantiate(AlienPrefab, new Vector2(spawnXPosition, 0.17f), Quaternion.identity);
+        else {
+            chooseAnimal = Random.Range(0,3);
+
+            switch (chooseAnimal) {
+                case 0:
+                    Alien = (GameObject)Instantiate(AlienPrefab, new Vector2(spawnXPosition, 0.17f), Quaternion.identity);
+                    break;
+
+                case 1:
+                    Monkey = (GameObject)Instantiate(MonkeyPrefab, new Vector2(spawnXPosition, -0.6f), MonkeyPrefab.transform.rotation);
+                    break;
+
+                case 2:
+                    Alien = (GameObject)Instantiate(AlienPrefab, new Vector2(spawnXPosition, 0.17f), Quaternion.identity);
+                    Monkey = (GameObject)Instantiate(MonkeyPrefab, new Vector2(spawnXPosition, -0.6f), MonkeyPrefab.transform.rotation);
+                    break;
+            }
+        }
     }
 }
