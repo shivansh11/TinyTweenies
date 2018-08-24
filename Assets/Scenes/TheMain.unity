@@ -415,6 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 127576784}
+  - component: {fileID: 127576785}
   - component: {fileID: 127576783}
   m_Layer: 0
   m_Name: GameController
@@ -446,6 +447,7 @@ MonoBehaviour:
   BombPrefab: {fileID: 1298171001920600, guid: 49fdfc575577e424599337460901c674, type: 2}
   UFOPrefab: {fileID: 1338063960624712, guid: 5651c5bcc6f63df48b253b995084c4c1, type: 2}
   UFO1Prefab: {fileID: 1888749387382324, guid: 74e74498bf101274189105e88d16ef37, type: 2}
+  CoinPrefab: {fileID: 1845711630321028, guid: 9a4c951f698e3324287ca9115f46414d, type: 2}
   spawnRate: 4
   fastForward: 0
 --- !u!4 &127576784
@@ -461,6 +463,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &127576785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 127576782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e80b13f2602f4344b6afbcbf7e3986a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &131840372
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class BackgroundsScroller : MonoBehaviour {
 
     private Rigidbody2D rb2d;
 
-
     void Start () {
         speed = -speed;
         rb2d = GetComponent<Rigidbody2D>();
@@ -17,6 +16,7 @@ public class BackgroundsScroller : MonoBehaviour {
 	}
 
 	void Update () {
+
         if (transform.position.x < -19.2f)
             Reposition();
 	}
