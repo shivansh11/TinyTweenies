@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.96000093
+  m_Length: 0.96
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 355944665}
   m_AttachedIK: {fileID: 1357625611}
@@ -864,7 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.0000002
+  m_Length: 1.0000001
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 1609541624}
   m_AttachedIK: {fileID: 839462475}
@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.9100006
+  m_Length: 0.91000086
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 1683076049}
   m_AttachedIK: {fileID: 1417100276}
@@ -2117,6 +2117,8 @@ GameObject:
   - component: {fileID: 636822399}
   - component: {fileID: 636822398}
   - component: {fileID: 636822397}
+  - component: {fileID: 636822401}
+  - component: {fileID: 636822402}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2203,6 +2205,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &636822401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 636822396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea65dd0e866914e4587c54a9de374ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TT1: {fileID: 261321257}
+  TT2: {fileID: 1650798856}
+  anim1: {fileID: 0}
+  anim2: {fileID: 0}
+  anim: {fileID: 0}
+--- !u!95 &636822402
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 636822396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ebb4a189451a95a4a9ea2675b2e3317c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &672842090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.8900007
+  m_Length: 0.89000106
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 961364676}
   m_AttachedIK: {fileID: 1176723636}
@@ -3933,7 +3969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.94000024
+  m_Length: 0.9400006
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 1786451662}
   m_AttachedIK: {fileID: 1178557417}
