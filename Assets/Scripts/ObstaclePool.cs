@@ -100,8 +100,6 @@ public class ObstaclePool : MonoBehaviour {
             obstacleIndex2 = Random.Range(-2, 1);
         }
 
-        Debug.Log("Index1: " + obstacleIndex1 + " || Index2: " + obstacleIndex2);
-
         if (obstacleIndex1 == 0 || obstacleIndex2 == -obstacleIndex1 || obstacleIndex2 == 0)
             SpawnObstacles(obstacleIndex1, obstacleIndex2);
         else {
@@ -144,14 +142,14 @@ public class ObstaclePool : MonoBehaviour {
                 case "UFO":
                     switch (leftOrRight) {
                         case 0:
-                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition -2f, 3f), Quaternion.identity);
+                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition -2.5f, 3f), Quaternion.identity);
                             break;
                         case 1:
-                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition + 2f, 3f), Quaternion.identity);
+                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition + 2.5f, 3f), Quaternion.identity);
                             break;
                         case 2:
-                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition - 2, 3f), Quaternion.identity);
-                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition + 2, 3f), Quaternion.identity);
+                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition - 2.5f, 3f), Quaternion.identity);
+                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition + 2.5f, 3f), Quaternion.identity);
                             break;
                     }
                     break;
@@ -224,14 +222,14 @@ public class ObstaclePool : MonoBehaviour {
                     switch (leftOrRight)
                     {
                         case 0:
-                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition - 2f, -3f), Quaternion.identity);
+                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition - 2.5f, -3f), Quaternion.identity);
                             break;
                         case 1:
-                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition + 2f, -3f), Quaternion.identity);
+                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition + 2.5f, -3f), Quaternion.identity);
                             break;
                         case 2:
-                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition - 2, -3f), Quaternion.identity);
-                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition + 2, -3f), Quaternion.identity);
+                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition - 2.5f, -3f), Quaternion.identity);
+                            Coin = (GameObject)Instantiate(CoinPrefab, new Vector2(coinXPosition + 2.5f, -3f), Quaternion.identity);
                             break;
                     }
                     break;

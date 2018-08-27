@@ -22,11 +22,12 @@ public class CoinManager : MonoBehaviour {
             Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
+    private void OnTriggerEnter2D(Collider2D collider){
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        if (collision.gameObject.name == "TT1" || collision.gameObject.name == "TT2"){
+        if (collider.gameObject.name == "TT1" || collider.gameObject.name == "TT2"){
             Destroy(gameObject);
             //and add coins to plyerprefs
-        }   
+        }
+        Debug.Log("Triggered");
     }
 }
