@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour {
-    public GameObject TT1, TT2, BoomText;
+    public GameObject TT1, BoomText;
 
     void Start () {
         TT1 = GameObject.Find("TT1");
-        TT2 = GameObject.Find("TT2");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
