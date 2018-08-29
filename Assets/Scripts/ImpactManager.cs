@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ImpactManager : MonoBehaviour {
-    public GameObject TT1, TT2;
+    public GameObject TT1, TT2, ActionController;
     public Animator anim1, anim2;
 
-    public float lifetime = 5f;
+    public float lifetime = 10f;
     private float timeSinceLastSpawned;
 
     void Start () {
         TT1 = GameObject.Find("TT1");
         TT2 = GameObject.Find("TT2");
+        ActionController = GameObject.Find("ActionController");
         anim1 = TT1.GetComponent<Animator>();
         anim2 = TT2.GetComponent<Animator>();
     }
@@ -29,9 +30,9 @@ public class ImpactManager : MonoBehaviour {
         {
             anim1.SetTrigger("isDead");
             anim2.SetTrigger("isDead");
+            ActionController.GetComponent<Actions>().Halo();
         }
         else
             Destroy(gameObject);
-            
     }
 }

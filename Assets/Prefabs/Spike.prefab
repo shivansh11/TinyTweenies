@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TT1: {fileID: 0}
   TT2: {fileID: 0}
+  ActionController: {fileID: 0}
   anim1: {fileID: 0}
   anim2: {fileID: 0}
   lifetime: 5

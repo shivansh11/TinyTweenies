@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Actions : MonoBehaviour {
     public TouchController tc;
-    public GameObject TT1, TT2, BulletPrefab, SwordCollider;
+    public GameObject TT1, TT2, TT1Halo, TT2Halo, BulletPrefab, SwordCollider, MC;
     public Rigidbody2D rb1, rb2;
     private GameObject Bullet;
     public Animator anim1, anim2;
@@ -73,5 +73,19 @@ public class Actions : MonoBehaviour {
         SwordCollider.SetActive(true);
         yield return new WaitForSeconds(0.4f);
         SwordCollider.SetActive(false);
+    }
+
+    public void Halo() {
+        if (MC.GetComponent<CameraController>().isDead == 0) {
+            MC.GetComponent<CameraController>().isDead = 1;
+            MC.GetComponent<CameraController>().Shake();
+            StartCoroutine(ActivateHalo());
+        }
+    }
+
+    IEnumerator ActivateHalo() {
+        yield return new WaitForSeconds(1f);
+        TT1Halo.SetActive(true);
+        TT2Halo.SetActive(true);
     }
 }

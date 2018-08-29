@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58131326956005906}
   - component: {fileID: 114380222282904194}
   - component: {fileID: 114494197126149142}
+  - component: {fileID: 114634212028063114}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TT1: {fileID: 0}
   TT2: {fileID: 0}
+  ActionController: {fileID: 0}
   anim1: {fileID: 0}
   anim2: {fileID: 0}
   lifetime: 5
@@ -156,6 +158,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!114 &114634212028063114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246404377362330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ce4beb3c331914c9be2ae1e9c2e575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TT1: {fileID: 0}
+  TT2: {fileID: 0}
+  TT1Stars: {fileID: 0}
+  TT2Stars: {fileID: 0}
 --- !u!212 &212031005345058282
 SpriteRenderer:
   m_ObjectHideFlags: 1

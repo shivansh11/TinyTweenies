@@ -50,9 +50,9 @@ TagManager:
   - name: Foreground
     uniqueID: 68382111
     locked: 0
-  - name: Obstacles
-    uniqueID: 137744323
-    locked: 0
   - name: TT1
     uniqueID: 2741338921
+    locked: 0
+  - name: Obstacles
+    uniqueID: 137744323
     locked: 0

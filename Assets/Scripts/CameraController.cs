@@ -8,11 +8,13 @@ public class CameraController : MonoBehaviour {
     public Animator anim1, anim2, anim;
 
     private int isSlideShake = 0;
+    public int isDead;
 
     void Start () {
         anim1 = TT1.GetComponent<Animator>();
         anim2 = TT2.GetComponent<Animator>();
         anim = gameObject.GetComponent<Animator>();
+        isDead = 0;
     }
 	
 
@@ -29,4 +31,8 @@ public class CameraController : MonoBehaviour {
         yield return new WaitForSeconds(0.2f);
         isSlideShake = 0;
     }
-}
+
+    public void Shake() {
+        anim.SetTrigger("isSlideShake");
+    }
+}   
