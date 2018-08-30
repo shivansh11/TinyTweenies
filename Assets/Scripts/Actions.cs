@@ -84,7 +84,7 @@ public class Actions : MonoBehaviour {
     }
 
     IEnumerator ActivateHalo() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         TT1Halo.SetActive(true);
         TT2Halo.SetActive(true);
     }

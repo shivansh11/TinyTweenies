@@ -6,7 +6,7 @@ public class ImpactManager : MonoBehaviour {
     public GameObject TT1, TT2, ActionController;
     public Animator anim1, anim2;
 
-    public float lifetime = 10f;
+    public float lifetime = 5f;
     private float timeSinceLastSpawned;
 
     void Start () {
