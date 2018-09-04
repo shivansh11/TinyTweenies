@@ -45,7 +45,7 @@ public class Actions : MonoBehaviour {
 
         if (tc.Tap && combatTime <= 0)
         {
-            combatTime = timeDelay;
+            combatTime = 0.834f;
             anim1.SetTrigger("isCombat");
             anim2.SetTrigger("isCombat");
             StartCoroutine(SpawnBullet());
