@@ -13,8 +13,6 @@ public class ImpactManager : MonoBehaviour {
         TT1 = GameObject.Find("TT1");
         TT2 = GameObject.Find("TT2");
         ActionController = GameObject.Find("ActionController");
-        anim1 = TT1.GetComponent<Animator>();
-        anim2 = TT2.GetComponent<Animator>();
     }
 	
 
@@ -27,11 +25,7 @@ public class ImpactManager : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision){
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         if (collision.gameObject.name == "TT1" || collision.gameObject.name == "TT2")
-        {
-            anim1.SetTrigger("isDead");
-            anim2.SetTrigger("isDead");
-            ActionController.GetComponent<Actions>().Halo();
-        }
+            ActionController.GetComponent<Actions>().Die();
         else
             Destroy(gameObject);
     }

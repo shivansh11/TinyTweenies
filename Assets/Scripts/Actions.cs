@@ -5,6 +5,7 @@ using UnityEngine;
 public class Actions : MonoBehaviour {
     public TouchController tc;
     public GameObject TT1, TT2, TT1Halo, TT2Halo, BulletPrefab, SwordCollider, MC;
+    public GameObject IonicSheild, YogicShield;
     public Rigidbody2D rb1, rb2;
     private GameObject Bullet;
     public Animator anim1, anim2;
@@ -20,10 +21,6 @@ public class Actions : MonoBehaviour {
         rb1 = TT1.GetComponent<Rigidbody2D>();
         rb2 = TT2.GetComponent<Rigidbody2D>();
     }
-	
-	void Update () {
-            
-	}
 
     void FixedUpdate(){
         if (tc.SwipeUp && jumpTime <= 0){
@@ -73,6 +70,14 @@ public class Actions : MonoBehaviour {
         SwordCollider.SetActive(true);
         yield return new WaitForSeconds(0.4f);
         SwordCollider.SetActive(false);
+    }
+
+    public void Die() {
+        if (!IonicSheild.activeSelf) {
+            anim1.SetTrigger("isDead");
+            anim2.SetTrigger("isDead");
+            Halo();
+        }
     }
 
     public void Halo() {

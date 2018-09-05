@@ -30,9 +30,7 @@ public class EnemyEffect : MonoBehaviour {
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         if (collision.gameObject.name == "TT2" || collision.gameObject.name == "TT1") {
             EnemyText.GetComponent<ParticleSystem>().Play(true);
-            anim1.SetTrigger("isDead");
-            anim2.SetTrigger("isDead");
-            ActionController.GetComponent<Actions>().Halo();
+            ActionController.GetComponent<Actions>().Die();
         } else {
             Burst.GetComponent<ParticleSystem>().Play(true);
             Alien.SetActive(false);

@@ -27,7 +27,7 @@ public class CoinManager : MonoBehaviour {
         if (collider.gameObject.name == "TT1" || collider.gameObject.name == "TT2"){
             Destroy(gameObject);
             //and add coins to plyerprefs
+            GameObject.Find("GameController").GetComponent<GameControl>().SetCoins();
         }
-        Debug.Log("Triggered");
     }
 }
