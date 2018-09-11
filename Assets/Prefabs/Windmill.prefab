@@ -173,6 +173,7 @@ MonoBehaviour:
   TT2: {fileID: 0}
   TT1Stars: {fileID: 0}
   TT2Stars: {fileID: 0}
+  ActionController: {fileID: 0}
 --- !u!212 &212132239707169800
 SpriteRenderer:
   m_ObjectHideFlags: 1
