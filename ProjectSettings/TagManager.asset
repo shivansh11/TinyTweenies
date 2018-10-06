@@ -56,3 +56,6 @@ TagManager:
   - name: Obstacles
     uniqueID: 137744323
     locked: 0
+  - name: Bubbles
+    uniqueID: 1899125935
+    locked: 0

@@ -9,6 +9,7 @@ public class Actions : MonoBehaviour {
     public Rigidbody2D rb1, rb2;
     private GameObject Bullet;
     public Animator anim1, anim2;
+    public GameObject BubbleController;
 
     public float timeDelay = 1.25f;
     public float jumpTime = 0f;
@@ -42,7 +43,7 @@ public class Actions : MonoBehaviour {
 
         if (tc.Tap && combatTime <= 0)
         {
-            combatTime = 0.834f;
+            combatTime = 0.6f;
             anim1.SetTrigger("isCombat");
             anim2.SetTrigger("isCombat");
             StartCoroutine(SpawnBullet());
@@ -72,10 +73,11 @@ public class Actions : MonoBehaviour {
         SwordCollider.SetActive(false);
     }
 
-    public void Die() {
+    public void Die(string character) {
         if (!IonicShield.activeSelf) {
             anim1.SetTrigger("isDead");
             anim2.SetTrigger("isDead");
+            BubbleController.GetComponent<BubbleManager>().Bubble(character);
             Halo();
         }
     }

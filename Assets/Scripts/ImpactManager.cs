@@ -24,8 +24,10 @@ public class ImpactManager : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision){
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        if (collision.gameObject.name == "TT1" || collision.gameObject.name == "TT2")
-            ActionController.GetComponent<Actions>().Die();
+        if (collision.gameObject.name == "TT1")
+            ActionController.GetComponent<Actions>().Die("TT1");
+        else if (collision.gameObject.name == "TT2")
+            ActionController.GetComponent<Actions>().Die("TT2");
         else
             Destroy(gameObject);
     }

@@ -28,10 +28,16 @@ public class EnemyEffect : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
+
         if (collision.gameObject.name == "TT2" || collision.gameObject.name == "TT1") {
             EnemyText.GetComponent<ParticleSystem>().Play(true);
-            ActionController.GetComponent<Actions>().Die();
-        } else {
+        }
+
+        if (collision.gameObject.name == "TT1")
+            ActionController.GetComponent<Actions>().Die("TT1");
+        else if (collision.gameObject.name == "TT2")
+            ActionController.GetComponent<Actions>().Die("TT2");
+        else {
             Burst.GetComponent<ParticleSystem>().Play(true);
             Alien.SetActive(false);
             StartCoroutine(Die());
