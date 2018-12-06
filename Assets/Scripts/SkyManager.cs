@@ -6,22 +6,40 @@ public class SkyManager : MonoBehaviour {
 
     public GameObject SkyUp;
     public GameObject SkyDown;
+    public GameObject StarsUp;
+    public GameObject StarsDown;
+
+    public GameObject City;
+    public GameObject City1;
+    public GameObject Village;
+    public GameObject Village1;
+
+    public GameObject CityClouds;
+    public GameObject VillageClouds;
 
     //Always change the color properties through Inspector
     public Color Day;
     public Color Night;
-    public Color Day1;
-    public Color Night1;
+    public Color Glow;
+    public Color Unglow;
 
-    public Color Day2;
-    public Color Night2;
-    public Color Day3;
-    public Color Night3;
+    public Color DayForeground;
+    public Color NightForeground;
+
+    public Color DayClouds;
+    public Color NightClouds;
+
+    public GameObject LeftLaser;
+    public GameObject RightLaser;
+
+    private Animator leftLaser, rightLaser;
 
     private int indra = 0;
     private float t = 0;
 
     void Start () {
+        leftLaser = LeftLaser.GetComponent<Animator>();
+        rightLaser = RightLaser.GetComponent<Animator>();
         SkyUp.GetComponent<Renderer>().material.SetColor("_Color", Night);
         SkyDown.GetComponent<Renderer>().material.SetColor("_Color", Day);
         indra = Random.Range(0, 2);
@@ -30,16 +48,55 @@ public class SkyManager : MonoBehaviour {
 	void Update () {
         if (indra == 0) {
             SkyUp.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Day, Night, t));
-            SkyUp.GetComponent<Renderer>().material.SetColor("_Color1", Color.Lerp(Day1, Night1, t));
+            City.GetComponent<SpriteRenderer>().color = Color.Lerp(DayForeground, NightForeground, t);
+            City1.GetComponent<SpriteRenderer>().color = Color.Lerp(DayForeground, NightForeground, t);
+            StarsUp.GetComponent<SpriteRenderer>().color = Color.Lerp(Unglow, Glow, (t-0.75f) * 4);
+            CityClouds.GetComponent<SpriteRenderer>().color = Color.Lerp(DayClouds, NightClouds, t * 2);
 
-            SkyDown.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Night2, Day2, t));
-            SkyDown.GetComponent<Renderer>().material.SetColor("_Color1", Color.Lerp(Night3, Day3, t));
+
+            SkyDown.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Night, Day, t));
+            Village.GetComponent<SpriteRenderer>().color = Color.Lerp(NightForeground, DayForeground, t);
+            Village1.GetComponent<SpriteRenderer>().color = Color.Lerp(NightForeground, DayForeground, t);
+            StarsDown.GetComponent<SpriteRenderer>().color = Color.Lerp(Glow, Unglow, t * 2);
+            VillageClouds.GetComponent<SpriteRenderer>().color = Color.Lerp(NightClouds, DayClouds, (t - 0.75f) * 4);
+
+            //Laser Show
+            if (t > 0.7f) {
+                LeftLaser.SetActive(true);
+                RightLaser.SetActive(true);
+                leftLaser.SetBool("Show", true);
+                rightLaser.SetBool("Show", true);
+            } else {
+                LeftLaser.SetActive(false);
+                RightLaser.SetActive(false);
+                leftLaser.SetBool("Show", false);
+                rightLaser.SetBool("Show", false);
+            }
         } else {
             SkyUp.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Night, Day, t));
-            SkyUp.GetComponent<Renderer>().material.SetColor("_Color1", Color.Lerp(Night1, Day1, t));
+            City.GetComponent<SpriteRenderer>().color = Color.Lerp(NightForeground, DayForeground, t);
+            City1.GetComponent<SpriteRenderer>().color = Color.Lerp(NightForeground, DayForeground, t);
+            StarsUp.GetComponent<SpriteRenderer>().color = Color.Lerp(Glow, Unglow, t * 2);
+            CityClouds.GetComponent<SpriteRenderer>().color = Color.Lerp(NightClouds, DayClouds, (t - 0.75f) * 4);
 
-            SkyDown.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Day2, Night2, t));
-            SkyDown.GetComponent<Renderer>().material.SetColor("_Color1", Color.Lerp(Day3, Night3, t));
+            SkyDown.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Day, Night, t));
+            Village.GetComponent<SpriteRenderer>().color = Color.Lerp(DayForeground, NightForeground, t);
+            Village1.GetComponent<SpriteRenderer>().color = Color.Lerp(DayForeground, NightForeground, t);
+            StarsDown.GetComponent<SpriteRenderer>().color = Color.Lerp(Unglow, Glow, (t - 0.75f) * 4);
+            VillageClouds.GetComponent<SpriteRenderer>().color = Color.Lerp(DayClouds, NightClouds, t * 2);
+
+            //Laser Show
+            if (t < 0.4f) {
+                LeftLaser.SetActive(true);
+                RightLaser.SetActive(true);
+                leftLaser.SetBool("Show", true);
+                rightLaser.SetBool("Show", true);
+            } else {
+                LeftLaser.SetActive(false);
+                RightLaser.SetActive(false);
+                leftLaser.SetBool("Show", false);
+                rightLaser.SetBool("Show", false);
+            }
         }
 
         t += Time.deltaTime / 60;

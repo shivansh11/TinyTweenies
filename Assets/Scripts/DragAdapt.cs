@@ -6,11 +6,10 @@ using UnityEngine.EventSystems;
 
 public class DragAdapt : MonoBehaviour {
 
-    public int baseThresh = 6;
-    public int basePPI = 210;
+    public int baseThresh = 5;
 
     void Start () {
-        GetComponent<EventSystem>().pixelDragThreshold = baseThresh * (int)Screen.dpi / basePPI;
+        GetComponent<EventSystem>().pixelDragThreshold = (int)(baseThresh * Screen.dpi / 160f);
     }
 
 }

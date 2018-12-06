@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  enable: 0
 --- !u!114 &114639222720582082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,6 +145,7 @@ MonoBehaviour:
   anim1: {fileID: 0}
   anim2: {fileID: 0}
   lifetime: 5
+  timeSinceLastSpawned: 0
 --- !u!212 &212180033996451542
 SpriteRenderer:
   m_ObjectHideFlags: 1

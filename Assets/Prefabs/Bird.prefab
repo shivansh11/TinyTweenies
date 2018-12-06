@@ -146,6 +146,7 @@ MonoBehaviour:
   anim1: {fileID: 0}
   anim2: {fileID: 0}
   lifetime: 5
+  timeSinceLastSpawned: 0
 --- !u!114 &114494197126149142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  enable: 0
 --- !u!114 &114634212028063114
 MonoBehaviour:
   m_ObjectHideFlags: 1

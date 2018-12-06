@@ -12,15 +12,11 @@ public class UpperObjectsCollisionEffect : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        if (collision.gameObject.name == "TT1"){
+        //gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        if (collision.gameObject.name == "TT1")
             ActionController.GetComponent<Actions>().StarsTT1();
-        }
 
         if (collision.gameObject.name == "TT2")
-        {
-            ActionController.GetComponent<Actions>().StarsTT1();
-        }
-
+            ActionController.GetComponent<Actions>().StarsTT2();
     }
 }

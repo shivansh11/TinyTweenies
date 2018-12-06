@@ -5,8 +5,7 @@ using UnityEngine;
 public class SpikeEffect : MonoBehaviour {
     public GameObject TT2, SpikeText;
 
-    void Start()
-    {
+    void Start () {
         TT2 = GameObject.Find("TT2");
     }
 

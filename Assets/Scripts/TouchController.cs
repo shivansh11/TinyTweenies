@@ -27,24 +27,18 @@ public class TouchController : MonoBehaviour {
 
         swipeDelta = Vector2.zero;
 
-        if (isDragging) {
+        if (isDragging)
             if (Input.touches.Length > 0)
                 swipeDelta = Input.touches[0].position - startTouch;
-        }
 
-        if (swipeDelta.magnitude > 25)
+        if (Mathf.Abs(swipeDelta.y) > 10)
         {
             isSwiped = true;
-            float x = swipeDelta.x;
-            float y = swipeDelta.y;
 
-            if (Mathf.Abs(y) > Mathf.Abs(x))
-            {
-                if (y < 0)
-                    swipeDown = true;
-                else
-                    swipeUp = true;
-            }
+            if (swipeDelta.y < 0)
+                swipeDown = true;
+            else
+                swipeUp = true;
             Reset();
         }
 	}

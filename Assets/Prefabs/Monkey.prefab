@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  enable: 0
 --- !u!114 &114506894831281172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,6 +254,7 @@ MonoBehaviour:
   anim1: {fileID: 0}
   anim2: {fileID: 0}
   lifetime: 5
+  timeSinceLastSpawned: 0
 --- !u!198 &198322019702609986
 ParticleSystem:
   m_ObjectHideFlags: 1

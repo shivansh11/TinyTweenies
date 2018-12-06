@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Actions : MonoBehaviour {
     public TouchController tc;
@@ -10,6 +11,10 @@ public class Actions : MonoBehaviour {
     private GameObject Bullet;
     public Animator anim1, anim2;
     public GameObject BubbleController;
+    public GameObject GameController;
+    public Text ScoreText, DeathScoreText;
+    public GameObject DeathPanel;
+    public GameObject Score;
 
     public float timeDelay = 1.25f;
     public float jumpTime = 0f;
@@ -63,7 +68,7 @@ public class Actions : MonoBehaviour {
     IEnumerator SpawnBullet() {
         yield return new WaitForSeconds(0.25f);
         Bullet = (GameObject)Instantiate(BulletPrefab, new Vector2(-4f, 1.18f), Quaternion.identity);
-
+        Bullet.GetComponent<BackgroundsScroller>().enable = true;
     }
 
     IEnumerator ActivateSword() {
@@ -74,12 +79,13 @@ public class Actions : MonoBehaviour {
     }
 
     public void Die(string character) {
-        if (!IonicShield.activeSelf) {
+       // if (!IonicShield.activeSelf) {
+            GameController.GetComponent<GameControl>().Die();
             anim1.SetTrigger("isDead");
             anim2.SetTrigger("isDead");
             BubbleController.GetComponent<BubbleManager>().Bubble(character);
             Halo();
-        }
+        //}
     }
 
     public void Halo() {
@@ -94,15 +100,20 @@ public class Actions : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         TT1Halo.SetActive(true);
         TT2Halo.SetActive(true);
+        DeathScoreText.text = ScoreText.text;
+        DeathPanel.GetComponent<Image>().CrossFadeAlpha(0f, 0f, true);
+        Score.SetActive(false);
+        DeathPanel.SetActive(true);
+        DeathPanel.GetComponent<Image>().CrossFadeAlpha(0.8f, 0.15f, true);
     }
 
     public void StarsTT1() {
-        if (!IonicShield.activeSelf)
+        //if (!IonicShield.activeSelf)
             TT1Stars.GetComponent<ParticleSystem>().Play(true);
     }
 
     public void StarsTT2() {
-        if (!YogicShield.activeSelf)
+        //if (!YogicShield.activeSelf)
             TT2Stars.GetComponent<ParticleSystem>().Play(true);
     }
 
