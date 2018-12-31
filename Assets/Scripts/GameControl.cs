@@ -11,7 +11,7 @@ public class GameControl : MonoBehaviour {
     public float scoreTimer = 0f;
     public GameObject ButtonController;
 
-    private int score;
+    public int score;
     private int coins;
 
     void Start () {
@@ -23,6 +23,7 @@ public class GameControl : MonoBehaviour {
         score = 0;
         coins = 0;
         ScoreText.text = "Score : " + score;
+        Time.timeScale = 2f;
     }
 
     public void SetScore() {
@@ -35,7 +36,7 @@ public class GameControl : MonoBehaviour {
         if (death == 1 || ButtonController.GetComponent<ButtonManager>().paused == 1)
             return;
 
-        if (timeSinceLastUpdated > 10f && Time.timeScale < 2) {
+        if (timeSinceLastUpdated > 5f && Time.timeScale < 3) {
             timeSinceLastUpdated = 0f;
             Time.timeScale += 0.1f;
         }
@@ -50,7 +51,6 @@ public class GameControl : MonoBehaviour {
     }
 
     public void Die() {
-        Debug.Log("Death!");
         death = 1;
     }
 

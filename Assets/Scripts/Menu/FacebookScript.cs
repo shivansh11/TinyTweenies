@@ -18,6 +18,8 @@ public class FacebookScript : MonoBehaviour {
     public void Awake() {
         if (!PlayerPrefs.HasKey("Invited"))
             PlayerPrefs.SetInt("Invited", 0);
+        if (!PlayerPrefs.HasKey("Score"))
+            PlayerPrefs.SetInt("Score", 0);
 
         FacebookManager.Instance.FBInit();
 

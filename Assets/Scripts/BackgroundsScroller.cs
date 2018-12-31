@@ -21,7 +21,7 @@ public class BackgroundsScroller : MonoBehaviour {
         bm = GameObject.Find("ButtonController").GetComponent<ButtonManager>();
     }
 
-	void FixedUpdate () {
+    void FixedUpdate () {
         if (gc.death == 1) {
             rb2d.velocity = new Vector2(0, 0);
             return;

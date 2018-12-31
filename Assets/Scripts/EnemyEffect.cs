@@ -7,6 +7,8 @@ public class EnemyEffect : MonoBehaviour {
 
     public Animator anim1, anim2;
 
+    public AudioSource Pop;
+
     public float lifetime = 5f;
     public float timeSinceLastSpawned;
     private ButtonManager bm;
@@ -49,6 +51,7 @@ public class EnemyEffect : MonoBehaviour {
             Burst.GetComponent<ParticleSystem>().Play(true);
             Alien.SetActive(false);
             StartCoroutine(Die());
+            ActionController.GetComponent<Actions>().PopIt();
         }
     }
 

@@ -29,6 +29,7 @@ public class DayNight : MonoBehaviour {
     private Animator lightAnim1, lightAnim2;
 
     void Start () {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         gameObject.GetComponent<Renderer>().material.SetColor("_Color", Night);
         indra = Random.Range(0, 4);
         lightAnim1 = Light1.GetComponent<Animator>();

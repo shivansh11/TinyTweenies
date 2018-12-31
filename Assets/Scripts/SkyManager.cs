@@ -38,6 +38,7 @@ public class SkyManager : MonoBehaviour {
     private float t = 0;
 
     void Start () {
+        Application.targetFrameRate = -1;
         leftLaser = LeftLaser.GetComponent<Animator>();
         rightLaser = RightLaser.GetComponent<Animator>();
         SkyUp.GetComponent<Renderer>().material.SetColor("_Color", Night);
@@ -64,13 +65,9 @@ public class SkyManager : MonoBehaviour {
             if (t > 0.7f) {
                 LeftLaser.SetActive(true);
                 RightLaser.SetActive(true);
-                leftLaser.SetBool("Show", true);
-                rightLaser.SetBool("Show", true);
             } else {
                 LeftLaser.SetActive(false);
                 RightLaser.SetActive(false);
-                leftLaser.SetBool("Show", false);
-                rightLaser.SetBool("Show", false);
             }
         } else {
             SkyUp.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Night, Day, t));
@@ -89,13 +86,9 @@ public class SkyManager : MonoBehaviour {
             if (t < 0.4f) {
                 LeftLaser.SetActive(true);
                 RightLaser.SetActive(true);
-                leftLaser.SetBool("Show", true);
-                rightLaser.SetBool("Show", true);
             } else {
                 LeftLaser.SetActive(false);
                 RightLaser.SetActive(false);
-                leftLaser.SetBool("Show", false);
-                rightLaser.SetBool("Show", false);
             }
         }
 

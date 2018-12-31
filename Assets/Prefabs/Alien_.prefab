@@ -239,6 +239,7 @@ MonoBehaviour:
   Alien: {fileID: 1482215539083920}
   anim1: {fileID: 0}
   anim2: {fileID: 0}
+  Pop: {fileID: 0}
   lifetime: 5
   timeSinceLastSpawned: 0
 --- !u!114 &114927909545729938

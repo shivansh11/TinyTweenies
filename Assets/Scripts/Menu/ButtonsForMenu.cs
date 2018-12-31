@@ -8,11 +8,31 @@ public class ButtonsForMenu : MonoBehaviour {
 
     public GameObject Blackness;
     public GameObject ExitPanel;
+    public GameObject RatePanel;
+    public GameObject TutPanel;
     public GameObject InvitePanel;
     public GameObject NoInternerText;
     public GameObject Loading;
     public GameObject RewardPanel;
     AsyncOperation operation;
+
+    public void Start() {
+        if (!PlayerPrefs.HasKey("Tut")) {
+            PlayerPrefs.SetInt("Tut", 1);
+            TutUp();
+        }
+
+        if (!PlayerPrefs.HasKey("Rated")) {
+            PlayerPrefs.SetInt("Rated", 1);
+        }
+
+        if (PlayerPrefs.GetInt("Rated") != 0) {
+            if (PlayerPrefs.GetInt("Rated") == 10)
+                RateUp();
+            else
+                PlayerPrefs.SetInt("Rated", PlayerPrefs.GetInt("Rated") + 1);
+        }
+    }
 
     public void Play() {
         StartCoroutine(LoadAsync());
@@ -33,8 +53,23 @@ public class ButtonsForMenu : MonoBehaviour {
                 ExitUp();
             else
                 ExitDown();
-        }
-           
+        }           
+    }
+
+    public void RateUp() {
+        RatePanel.GetComponent<Image>().CrossFadeAlpha(0f, 0f, true);
+        RatePanel.SetActive(true);
+        RatePanel.GetComponent<Image>().CrossFadeAlpha(1f, 0.5f, true);
+    }
+
+    public void RateDown() {
+        PlayerPrefs.SetInt("Rated", 0);
+        RatePanel.SetActive(false);
+    }
+
+    public void RateYes() {
+        Application.OpenURL("market://details?id=com.loyalsheep.TinyTweenies");
+        RateDown();
     }
 
     public void ExitUp() {
@@ -45,6 +80,16 @@ public class ButtonsForMenu : MonoBehaviour {
 
     public void ExitDown() {
         ExitPanel.SetActive(false);
+    }
+
+    public void TutUp() {
+        TutPanel.GetComponent<Image>().CrossFadeAlpha(0f, 0f, true);
+        TutPanel.SetActive(true);
+        TutPanel.GetComponent<Image>().CrossFadeAlpha(1f, 0.5f, true);
+    }
+
+    public void TutDown() {
+        TutPanel.SetActive(false);
     }
 
     public void Exit() {
@@ -63,5 +108,9 @@ public class ButtonsForMenu : MonoBehaviour {
 
     public void RewardDown() {
         RewardPanel.SetActive(false);
+    }
+
+    public void Leaderboard() {
+        PlayGamesScript.ShowLeaderboard();
     }
 }

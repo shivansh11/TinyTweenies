@@ -42,6 +42,5 @@ public class ButtonManager : MonoBehaviour {
             PauseButton();
         else if(Input.GetKey(KeyCode.Escape) && PausedPanel.activeSelf == true)
             ResumeButton();
-
     }
 }
